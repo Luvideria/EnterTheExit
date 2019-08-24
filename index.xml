@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Enter The Exit</title>
-    <link>EnterTheExit/</link>
-    <description>Recent content on Enter The Exit</description>
+    <title>Hugo Hermit</title>
+    <link>/</link>
+    <description>Recent content on Hugo Hermit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Sat, 24 Aug 2019 00:27:06 +0200</lastBuildDate>
     
-	<atom:link href="EnterTheExit/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>About</title>
-      <link>EnterTheExit/about/</link>
+      <link>/about/</link>
       <pubDate>Sat, 24 Aug 2019 00:27:06 +0200</pubDate>
       
-      <guid>EnterTheExit/about/</guid>
+      <guid>/about/</guid>
       <description>Thank you for reading this. To learn more about me, read my posts. Understand my poems. Follow my arguments. Find my biases.
 Maybe you meant in a more administrative way? Irrelevant. Discover what is left in plain sight, gather data. Better even, discuss.</description>
     </item>
     
     <item>
       <title>My First Post</title>
-      <link>EnterTheExit/posts/my-first-post/</link>
+      <link>/posts/my-first-post/</link>
       <pubDate>Thu, 22 Aug 2019 12:09:06 +0200</pubDate>
       
-      <guid>EnterTheExit/posts/my-first-post/</guid>
+      <guid>/posts/my-first-post/</guid>
       <description>lorem ipsum dolor sit amet</description>
     </item>
     
