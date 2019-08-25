@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sun, 25 Aug 2019 14:31:40 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 26 Aug 2019 00:08:44 +0200</lastBuildDate>
     
 	<atom:link href="https://luvideria.github.io/EnterTheExit/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>My Tiny Dragon</title>
+      <link>https://luvideria.github.io/EnterTheExit/posts/my-tiny-dragon/</link>
+      <pubDate>Mon, 26 Aug 2019 00:08:44 +0200</pubDate>
+      
+      <guid>https://luvideria.github.io/EnterTheExit/posts/my-tiny-dragon/</guid>
+      <description>Text I have a dragon in my room. One may ask &amp;ldquo;Show me your dragon&amp;rdquo; but I cannot. Sadly, it is small, very very small. And it is fast, very very fast. One may ask &amp;ldquo;Then how do you know it exists ?&amp;rdquo; Well it&amp;rsquo;s simple. Sometimes I feel like I tripped over something but no cable, no furniture just a perfectly flat floor, as if it just carelessly bumped into me.</description>
+    </item>
     
     <item>
       <title>Test</title>
