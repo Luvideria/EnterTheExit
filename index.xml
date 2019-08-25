@@ -1,33 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hugo Hermit</title>
-    <link>/</link>
-    <description>Recent content on Hugo Hermit</description>
+    <title>Enter The Exit</title>
+    <link>https://luvideria.github.io/EnterTheExit/</link>
+    <description>Recent content on Enter The Exit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Sat, 24 Aug 2019 00:27:06 +0200</lastBuildDate>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://luvideria.github.io/EnterTheExit/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>About</title>
-      <link>/about/</link>
+      <link>https://luvideria.github.io/EnterTheExit/about/</link>
       <pubDate>Sat, 24 Aug 2019 00:27:06 +0200</pubDate>
       
-      <guid>/about/</guid>
-      <description>Thank you for reading this. To learn more about me, read my posts. Understand my poems. Follow my arguments. Find my biases.
-Maybe you meant in a more administrative way? Irrelevant. Discover what is left in plain sight, gather data. Better even, discuss.</description>
+      <guid>https://luvideria.github.io/EnterTheExit/about/</guid>
+      <description>I&amp;rsquo;m building a site, and I always encounter the weirdest bugs. Don&amp;rsquo;t ask me.</description>
     </item>
     
     <item>
       <title>My First Post</title>
-      <link>/posts/my-first-post/</link>
+      <link>https://luvideria.github.io/EnterTheExit/posts/my-first-post/</link>
       <pubDate>Thu, 22 Aug 2019 12:09:06 +0200</pubDate>
       
-      <guid>/posts/my-first-post/</guid>
+      <guid>https://luvideria.github.io/EnterTheExit/posts/my-first-post/</guid>
       <description>lorem ipsum dolor sit amet</description>
     </item>
     
