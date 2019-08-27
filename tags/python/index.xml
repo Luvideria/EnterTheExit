@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python on Enter The Exit</title>
+    <link>https://luvideria.github.io/EnterTheExit/tags/python/</link>
+    <description>Recent content in python on Enter The Exit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Tue, 27 Aug 2019 00:20:57 +0200</lastBuildDate>
+    
+	<atom:link href="https://luvideria.github.io/EnterTheExit/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Raymarching</title>
+      <link>https://luvideria.github.io/EnterTheExit/posts/raymarching/</link>
+      <pubDate>Tue, 27 Aug 2019 00:20:57 +0200</pubDate>
+      
+      <guid>https://luvideria.github.io/EnterTheExit/posts/raymarching/</guid>
+      <description>I always was very interested into fractals, notably I played quite a fair bit with Apophysis. That&amp;rsquo;s how I created these images:
+As you can see, there was also transparency. They look very different on a white or on a black background, you can try (for the first two ones)
+So it was really nice, but I had no idea how to render fractals. And I didn&amp;rsquo;t care.
+Now the time has come.</description>
+    </item>
+    
+  </channel>
+</rss>

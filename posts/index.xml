@@ -6,8 +6,160 @@
 		<generator>Hugo -- gohugo.io</generator>
 		<language>en-us</language>
 		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-		<lastBuildDate>Mon, 26 Aug 2019 00:08:44 +0200</lastBuildDate>
+		<lastBuildDate>Tue, 27 Aug 2019 00:20:57 +0200</lastBuildDate>
 		<atom:link href="https://luvideria.github.io/EnterTheExit/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>Raymarching</title>
+			<link>https://luvideria.github.io/EnterTheExit/posts/raymarching/</link>
+			<pubDate>Tue, 27 Aug 2019 00:20:57 +0200</pubDate>
+			
+			<guid>https://luvideria.github.io/EnterTheExit/posts/raymarching/</guid>
+			<description>I always was very interested into fractals, notably I played quite a fair bit with Apophysis. That&amp;rsquo;s how I created these images:
+As you can see, there was also transparency. They look very different on a white or on a black background, you can try (for the first two ones)
+So it was really nice, but I had no idea how to render fractals. And I didn&amp;rsquo;t care.
+Now the time has come.</description>
+			<content type="html"><![CDATA[<p>I always was very interested into fractals, notably I played quite a fair bit with <a href="https://en.wikipedia.org/wiki/Apophysis_(software)">Apophysis</a>. That&rsquo;s how I created these images:</p>
+
+<p><img src="https://i.ibb.co/DRx1nmv/Grand-Julian.png" alt="Grand-Julian" /></p>
+
+<p><img src="https://i.ibb.co/Fgt4nWm/Piatch.png" alt="Piatch" /></p>
+
+<p><img src="https://i.ibb.co/th66ZGb/triancore.png" alt="triancore" /></p>
+
+<p><img src="https://i.ibb.co/qgdm7br/Triangula.png" alt="Triangula" /></p>
+
+<p>As you can see, there was also transparency. They look very different on a white or on a black background, you can try (for the first two ones)</p>
+
+<p>So it was really nice, but I had no idea how to render fractals. And I didn&rsquo;t care.</p>
+
+<p>Now the time has come. I&rsquo;ve already written my own (crappy) pathtracer so it cannot be so hard.
+I understand how raytracing works. But I never had the chance to learn about ray marching.</p>
+
+<p>So I fiddled with python and found some ressources on internet (where else ?)
+I wanted to have as few info as possible, and I wanted to solve all the problems myself.</p>
+
+<p>Guess what?
+It&rsquo;s easy.
+I&rsquo;m not joking:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#this is the object list</span>
+<span class="n">o</span><span class="o">=</span><span class="nb">list</span><span class="p">()</span>
+<span class="n">o</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Sphere</span><span class="p">(</span><span class="n">c</span><span class="o">=</span><span class="p">[</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.2</span><span class="p">]))</span>
+<span class="n">o</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Sphere</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">],</span><span class="n">c</span><span class="o">=</span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.4</span><span class="p">,</span><span class="mf">0.7</span><span class="p">]))</span>
+<span class="c1">#setting camera parameters, first position, then point to look at</span>
+<span class="n">c</span><span class="o">=</span><span class="n">Camera</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">15</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">fovy</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span><span class="n">xres</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span><span class="n">yres</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">img</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">xres</span><span class="p">,</span><span class="n">yres</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span> <span class="c1"># 3channels</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">xres</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">yres</span><span class="p">):</span>
+        <span class="nb">dir</span><span class="o">=</span><span class="n">c</span><span class="o">.</span><span class="n">getDirPix</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span>
+        <span class="n">cpos</span><span class="o">=</span><span class="n">c</span><span class="o">.</span><span class="n">pos</span>
+        <span class="c1">#index, final pos of the ray</span>
+        <span class="n">io</span><span class="p">,</span><span class="n">sp</span><span class="o">=</span><span class="n">rayMarch</span><span class="p">(</span><span class="n">cpos</span><span class="p">,</span><span class="nb">dir</span><span class="p">,</span><span class="n">o</span><span class="p">)</span>
+        <span class="n">contrib</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">3</span>
+        <span class="k">if</span> <span class="n">io</span><span class="o">==-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">contrib</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">contrib</span><span class="o">=</span><span class="n">o</span><span class="p">[</span><span class="n">io</span><span class="p">]</span><span class="o">.</span><span class="n">c</span><span class="p">(</span><span class="n">cpos</span><span class="p">,</span><span class="nb">dir</span><span class="p">)</span>
+        <span class="n">img</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">contrib</span></code></pre></div>
+<p>Of course there are the <code>rayMarch()</code> function and the <code>Camera</code>.</p>
+
+<p>Basically only two things differ from normal ray tracing:</p>
+
+<ul>
+<li>intersection function does not really exist anymore</li>
+<li>objects are represented by a signed distance function</li>
+<li>your ray is litterally taking small steps to go traverse the scene</li>
+</ul>
+
+<p>The process goes this way:</p>
+
+<ul>
+<li>define objects (like spheres) with SDF corresponding to their parameters (radius, position, color)</li>
+<li>choose an origin $O_r$ for your ray (like, not too far not too close)</li>
+<li>choose a direction $d$ for your ray (straight on a sphere is good)</li>
+</ul>
+
+<p>Here, Rey Marching begins</p>
+
+<ol>
+<li>then compute the $SDF(O_r)$ for all objects in your scene</li>
+<li>take the minimum of it, let&rsquo;s call it <del>Oscar</del> $msdf$</li>
+<li>advance your ray of $msdf$ in the direction d (so it is $newO_r=O_r+msdf+epsilon$)
+
+<ul>
+<li>don&rsquo;t forget to add an epsilon, so that you are sure you are inside the sphere and the function change its sign</li>
+<li>actually I don&rsquo;t really know if it&rsquo;s good practice in this algorithm, but that&rsquo;s what we do in ray tracing (to prevent self intersection)</li>
+</ul></li>
+<li>then you repeat using the $newO_r$</li>
+<li>check if the sdf is 0 or less, if it&rsquo;s the case then you intersected, report the color value</li>
+</ol>
+
+<p>If you do that, you will loop indefinetely so best thing is to impose a hard limit to the distance the ray can travel
+Another solution would be to compute the bouding box of the scene (if at all, possible) and to measure the distance from the ray to the farthest point of it. But well, I just use 50, it&rsquo;s a good number.</p>
+
+<p>You can also impose a number of maximum steps, and if the ray is misbehaving, (doing too many small steps) hop, background color</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">EPSILON</span><span class="o">=</span><span class="mf">1e-8</span>
+<span class="n">LIM</span><span class="o">=</span><span class="mi">256</span>
+<span class="n">END</span><span class="o">=</span><span class="mi">50</span>
+<span class="k">def</span> <span class="nf">rayMarch</span><span class="p">(</span><span class="n">sp</span><span class="p">,</span><span class="n">sd</span><span class="p">,</span><span class="n">o</span><span class="p">:</span><span class="nb">list</span><span class="p">()):</span>
+    <span class="s1">&#39;&#39;&#39; sp is starting point, sd is starting direction and o is the list of shapes
+</span><span class="s1">    marches in the scene, returns
+</span><span class="s1">    * index of Shape intersected
+</span><span class="s1">    * last position of ray
+</span><span class="s1">    &#39;&#39;&#39;</span>
+    <span class="n">minlist</span><span class="o">=</span><span class="p">[</span><span class="n">obj</span><span class="o">.</span><span class="n">d</span><span class="p">(</span><span class="n">sp</span><span class="p">)</span> <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">o</span><span class="p">]</span>
+    <span class="n">v</span><span class="o">=</span><span class="nb">min</span><span class="p">(</span><span class="n">minlist</span><span class="p">)</span>
+    <span class="n">index</span><span class="o">=</span><span class="n">minlist</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+    <span class="n">depth</span><span class="o">=</span><span class="n">v</span>
+    <span class="n">i</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">while</span> <span class="n">v</span><span class="o">&gt;</span><span class="n">EPSILON</span> <span class="ow">and</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">LIM</span><span class="p">:</span>
+        <span class="n">minlist</span><span class="o">=</span><span class="p">[</span><span class="n">obj</span><span class="o">.</span><span class="n">d</span><span class="p">(</span><span class="n">sp</span><span class="p">)</span> <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">o</span><span class="p">]</span>
+        <span class="n">v</span><span class="o">=</span><span class="nb">min</span><span class="p">(</span><span class="n">minlist</span><span class="p">)</span>
+        <span class="n">index</span><span class="o">=</span><span class="n">minlist</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+        
+        <span class="c1"># epsilon so that we are sure to be inside</span>
+        <span class="n">sp</span><span class="o">=</span><span class="n">sp</span><span class="o">+</span><span class="n">v</span><span class="o">*</span><span class="n">sd</span><span class="o">+</span><span class="n">EPSILON</span>
+        <span class="n">i</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="c1"># yes I know i compute twice the same stuff,</span>
+        <span class="c1"># I added this later and I was too lazy to change the rest </span>
+        <span class="n">depth</span><span class="o">+=</span><span class="n">v</span><span class="o">+</span><span class="n">EPSILON</span>
+        <span class="k">if</span> <span class="n">depth</span><span class="o">&gt;</span><span class="n">END</span><span class="p">:</span>
+            <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">sp</span>
+    <span class="k">if</span> <span class="n">i</span><span class="o">&gt;=</span><span class="n">LIM</span><span class="p">:</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">sp</span>
+    <span class="k">return</span> <span class="n">index</span><span class="p">,</span><span class="n">sp</span></code></pre></div>
+<p>Now, you say, that does not make an image!
+Of course we need a camera. But that&rsquo;s maths and all, so let me just say that you give the camera a position to be, a position to look at, and boom, you&rsquo;re set.</p>
+
+<p>Now that we have a camera, we call the very convenient function <code>getPixelDir(i,j)</code> that gives us the direction or the ray</p>
+
+<p>Let&rsquo;s say we want a 1080p image, our image is $w=1920$ pixels wide and $h=1080$ pixels high</p>
+
+<ul>
+<li>loop $w$ times:
+
+<ul>
+<li>loop $h$ times:</li>
+<li>$d=getPixelDir(i,j)$ ($i$,$j$ are the current loop number for $w$ and $h$ loops)</li>
+<li>$p=getCameraPos$</li>
+<li>$color=rayMarch(p,d)$</li>
+<li>$img[i,j]=color$</li>
+</ul></li>
+</ul>
+
+<p>boom done. Do that and, like me, you obtain THIS:</p>
+
+<p><img src="https://i.ibb.co/nkQskTc/first.png" alt="img" /></p>
+
+<p>Incredible huh?</p>
+
+<p>Yes, it&rsquo;s shit, but what did you expect? there is no lighting, no bounce of the light. All this is for a real renderer.</p>
+
+<p>I just wanted to see how it works but now, I need to get on the fractal train.</p>
+
+<p>And I have to say, python sucks! It&rsquo;s so damn slow!</p>
+]]></content>
+		</item>
 		
 		<item>
 			<title>My Tiny Dragon</title>
@@ -31,27 +183,35 @@ on the back. I thought it was because of the stomach pain, maybe this position h
 
 <p><img src="https://i.ibb.co/4j24jxf/DSCF2229.jpg" alt="img" /></p>
 
-<p>I do not need you to believe in my dragon, my dragon is very real for me and I like him very much. I believe he is my friend and in any case I will always welcome him and his friends. But I do not care if someone does not believe in my dragon. You might be a scientist thirsty for knowledge, or a psychologist looking for an interesting case. Maybe you want to capture my dragon and study him, or make me sit and interrogate me. Maybe you just want to prove me I&rsquo;m wrong, that my dragon is nothing but delusions of an imaginative mind. Maybe. But I won&rsquo;t let you kill my dragon.
-You are not allowed any experiment. You are not allowed to make me understand what I actually tripped over or that the sound I heard was something else entirely. You are not allowed to make me doubt that the warmth I felt wasn&rsquo;t his. My dragon will live on until he decides to leave.</p>
+<p>I do not need you to believe in my dragon, my dragon is very real for me and I like him very much. I believe he is my friend and in any case I will always welcome him and his friends. But I do not care if someone does not believe in my dragon. You might be a scientist thirsty for knowledge, or a psychologist looking for an interesting case. Maybe you want to capture my dragon and study him, or make me sit and interrogate me. Maybe you just want to prove me I&rsquo;m wrong, that my dragon is nothing but delusions of an imaginative mind. Maybe. But I won&rsquo;t let you kill my dragon.</p>
+
+<p>You are not allowed any experiment. You are not allowed to make me understand what I actually tripped over or that the sound I heard was something else entirely. You are not allowed to make me doubt that the warmth I felt wasn&rsquo;t his. My dragon will live on until he decides to leave.</p>
 
 <h2 id="manifest">Manifest</h2>
 
-<p>The picture is from me, during a trip in Belle-île. One of my first pictures of the stars. My fuji x100s in not made for that.
+<p>The picture is from me, during a trip in Belle-île. One of my first pictures of the stars. My fuji x100s in not made for that, and to be honest, I don&rsquo;t like it so much anymore.
 I added it when doing the post, more to see how to put images and figure out a way to put them online easily.</p>
 
 <h3 id="context">Context</h3>
 
-<p>When I wrote this poem I was still active on a forum and there I exchanged with people persuaded by astrology, by Christiannism, by a lot of beliefs that sometimes hurt them more than they help. Some of them were very depressed.
-I wanted to share a part of my understanding of this situation.
-I feel sorry that they need to go this far in the nonsense to find salvation. Yet, they do feel better, some people find in these something that society, psychiatrists or their job do not offer.
-And this is very good and I am delighted that they find something that works for them.
-Yet they start to build a sentimental, emotionnal bond with it. And as the little girl (I imagine that, but it&rsquo;s sexist, sorry) will outgrow her enthusiastic imagination, they should also outgrow their beliefs. Not in the sense that they should part with them, in the sense that it is not needed anymore. In the state I saw a lot of people (a lot is actually not even statistically sensible, but it&rsquo;s more than most people dealt with) they were like imprisonned by their beliefs. They could not evolve enough to be able to choose if they wanted to live with or without.
+<p>When I wrote this poem I was still active on a forum and there I exchanged with people persuaded by astrology, by Christiannism, by a lot of beliefs that sometimes hurt them more than they help. Some of them were very depressed.</p>
+
+<p>I wanted to share a part of my understanding of this situation.</p>
+
+<p>I feel sorry that they need to go this far in the nonsense to find salvation. Yet, they do feel better, some people find in these something that society, psychiatrists or their job do not offer. And that is not their fault.</p>
+
+<p>And this is very good and I am delighted that they find something that works for them.</p>
+
+<p>Yet they start to build a sentimental, emotional bond with it. And as the little girl (I imagine that, but it&rsquo;s sexist, sorry) will outgrow her enthusiastic imagination, they should also outgrow their beliefs. Not in the sense that they should part with them, in the sense that it is not needed anymore. In the state I saw a lot of people (a lot is actually not even statistically sensible, but it&rsquo;s more than most people dealt with) they were like imprisoned by their beliefs. They could not evolve enough to be able to choose if they wanted to live with or without.
 This is saddening.</p>
+
+<p>This is a topic (&ldquo;outgrowing beliefs&rdquo;) that I am fairly sensitive to. I think I have a lot of things to think about on this topic.</p>
 
 <h3 id="comments">Comments</h3>
 
-<p>I decided to share this as-is, without rewriting it, even if I think I could improve it.
-I like the way it sounds childish, but the end feels off. It does not feel like a child anymore, and it&rsquo;s more all the frustration that was in me that talked. In some sense, I feel like a gradient of childishness in this poem. Maybe that&rsquo;s good.</p>
+<p>I decided to share this as-is, without modifications, even if I think I could improve it. (It was written 5 months ago)</p>
+
+<p>I like the way it sounds childish, but the end feels off. It does not feel like a child anymore, and it&rsquo;s more all the frustration that was in me that talked. In some sense, I feel like a gradient of childishness in this poem. Maybe that&rsquo;s good.</p>
 
 <p>Very little rewriting happened (I would definitely use different images instead of twice stars : &ldquo;starry blanket&rdquo;, &ldquo;free the stars&rdquo;)
 but at the time I had no intention to publish it, so I did not really care.</p>
@@ -59,9 +219,11 @@ but at the time I had no intention to publish it, so I did not really care.</p>
 <p>I wanted to illustrate how people end up getting into these.. fields? esoterism? I don&rsquo;t really know, but you get it: mostly irrationnal stuff.</p>
 
 <p><strong>Confirmation bias</strong>: Looking for proofs that aren&rsquo;t really there, ignoring all the clues that point in other directions
-The stone moment illustrate how vicious life can be at giving you information.
-It can look like you got better, but actually the night was just nice and the sleep was in the end of good quality. In any case she would feel better and better. Let&rsquo;s not neglect placebo effect that may very well apply here.
-There is also this tendency to not use <a href="https://en.wikipedia.org/wiki/Occam%27s_razor">Ockham&rsquo;s razor</a>: she thinks it was to help the dragon heal her that she slept on the back but it could be a misplaced pillow because, while trying to get asleep, she kept moving around, moving pillows, or whatever other reason.</p>
+The stone moment illustrate how vicious life can be at giving you information.</p>
+
+<p>It can look like you got better, but actually the night was just nice and the sleep was in the end of good quality. In any case she would feel better and better. Let&rsquo;s not neglect placebo effect that may very well apply here.</p>
+
+<p>There is also this tendency to not use <strong><a href="https://en.wikipedia.org/wiki/Occam%27s_razor">Ockham&rsquo;s razor</a></strong>: she thinks it was to help the dragon heal her that she slept on the back but it could be a misplaced pillow because, while trying to get asleep, she kept moving around, moving pillows, or whatever other reason.</p>
 ]]></content>
 		</item>
 		
