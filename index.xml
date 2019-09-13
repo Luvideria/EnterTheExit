@@ -99,23 +99,5 @@ Je voulais donc répondre à ton message :
       <description>Kakakakaka Kakakakaka Kakakakaka Kakakakaka Kakakakaka Kakakakaka</description>
     </item>
     
-    <item>
-      <title>My First Post</title>
-      <link>https://luvideria.github.io/EnterTheExit/posts/my-first-post/</link>
-      <pubDate>Thu, 22 Aug 2019 12:09:06 +0200</pubDate>
-      
-      <guid>https://luvideria.github.io/EnterTheExit/posts/my-first-post/</guid>
-      <description>Bon ben fallait pas s&amp;rsquo;attendre à grand chose, hein! premier post, on fait des tests et tout&amp;hellip; Ahhh c&amp;rsquo;est le texte du lien qui va dans cette boiiiite, je me disais aussi.</description>
-    </item>
-    
-    <item>
-      <title>Typography</title>
-      <link>https://luvideria.github.io/EnterTheExit/posts/demotypo/demotypography/</link>
-      <pubDate>Sat, 29 Sep 2018 11:36:33 +0800</pubDate>
-      
-      <guid>https://luvideria.github.io/EnterTheExit/posts/demotypo/demotypography/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
-    </item>
-    
   </channel>
 </rss>
