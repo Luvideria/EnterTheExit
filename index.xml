@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 13 Sep 2019 00:27:56 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 14 Sep 2019 23:19:39 +0200</lastBuildDate>
     
 	<atom:link href="https://luvideria.github.io/EnterTheExit/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Bayes</title>
+      <link>https://luvideria.github.io/EnterTheExit/hidden/93376982778390/</link>
+      <pubDate>Sat, 14 Sep 2019 23:19:39 +0200</pubDate>
+      
+      <guid>https://luvideria.github.io/EnterTheExit/hidden/93376982778390/</guid>
+      <description>Explication viteuf de ce que j&amp;rsquo;entendais par &amp;ldquo;bayésien&amp;rdquo;: Disons que le personnage P effectue le calcul de la formule de Bayes1 qui lui donne donc pour résultat 80% pour A et 20% pour B. Il choisira donc A car la probabilité est plus élevé et effectuera éventuellement des actions en accord avec le fait que A est probablement plus vrai -selon ses informations- que B. Cependant le personnage L apporte de nouvelles données.</description>
+    </item>
+    
+    <item>
+      <title>Supernovae</title>
+      <link>https://luvideria.github.io/EnterTheExit/posts/supernovae/</link>
+      <pubDate>Sat, 14 Sep 2019 00:57:10 +0200</pubDate>
+      
+      <guid>https://luvideria.github.io/EnterTheExit/posts/supernovae/</guid>
+      <description>&amp;emsp;Encore un débat, je sens déjà que ça pétille en moi. Ça gronde à chaque virgule, ça détonne à chaque point. Je navigue dans cette logique, ces prémisses délicates, ces hypothèses fertiles. Le flot de mes pensées vire gré des implications. Les écueils sauront s&amp;rsquo;occuper des sophismes jetés par dessus bord, et chaque biais mis à jour se verra mourir au soleil. Au dessus de moi, c&amp;rsquo;est un feu d&amp;rsquo;artifice qui jaillit à chaque inférence.</description>
+    </item>
     
     <item>
       <title>Paradigm change</title>

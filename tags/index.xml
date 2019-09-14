@@ -7,10 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 13 Sep 2019 00:27:56 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 14 Sep 2019 00:57:10 +0200</lastBuildDate>
     
 	<atom:link href="https://luvideria.github.io/EnterTheExit/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>poetry</title>
+      <link>https://luvideria.github.io/EnterTheExit/tags/poetry/</link>
+      <pubDate>Sat, 14 Sep 2019 00:57:10 +0200</pubDate>
+      
+      <guid>https://luvideria.github.io/EnterTheExit/tags/poetry/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>text</title>
+      <link>https://luvideria.github.io/EnterTheExit/tags/text/</link>
+      <pubDate>Sat, 14 Sep 2019 00:57:10 +0200</pubDate>
+      
+      <guid>https://luvideria.github.io/EnterTheExit/tags/text/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>truth</title>
+      <link>https://luvideria.github.io/EnterTheExit/tags/truth/</link>
+      <pubDate>Sat, 14 Sep 2019 00:57:10 +0200</pubDate>
+      
+      <guid>https://luvideria.github.io/EnterTheExit/tags/truth/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>diet</title>
@@ -36,24 +63,6 @@
       <pubDate>Fri, 13 Sep 2019 00:27:56 +0200</pubDate>
       
       <guid>https://luvideria.github.io/EnterTheExit/tags/philosophy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>poetry</title>
-      <link>https://luvideria.github.io/EnterTheExit/tags/poetry/</link>
-      <pubDate>Thu, 29 Aug 2019 15:27:37 +0200</pubDate>
-      
-      <guid>https://luvideria.github.io/EnterTheExit/tags/poetry/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>text</title>
-      <link>https://luvideria.github.io/EnterTheExit/tags/text/</link>
-      <pubDate>Thu, 29 Aug 2019 15:27:37 +0200</pubDate>
-      
-      <guid>https://luvideria.github.io/EnterTheExit/tags/text/</guid>
       <description></description>
     </item>
     
