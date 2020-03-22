@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Thu, 05 Dec 2019 00:24:14 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 23 Mar 2020 00:38:02 +0100</lastBuildDate>
     
 	<atom:link href="https://luvideria.github.io/EnterTheExit/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Cette fille</title>
+      <link>https://luvideria.github.io/EnterTheExit/posts/cette_fille/</link>
+      <pubDate>Mon, 23 Mar 2020 00:38:02 +0100</pubDate>
+      
+      <guid>https://luvideria.github.io/EnterTheExit/posts/cette_fille/</guid>
+      <description>J&amp;rsquo;ai cette fille dans ma tête. J&amp;rsquo;ai chaud, je transpire. Mon souffle ralenti et la brise fait osciller doucement ma tunique. L&amp;rsquo;air dans mes poumons est aussi chaud que celui que j&amp;rsquo;expire. J&amp;rsquo;écoute les instructions. Je lui prends les mains, doucement, de sorte que la position naturelle des doigts nous tiennent liés. J&amp;rsquo;entends le son des anges, le son des merveilles et des songes. Une harpe m&amp;rsquo;a presque fait sursauter de joie.</description>
+    </item>
     
     <item>
       <title>Growth</title>
@@ -127,7 +136,10 @@ Je voulais donc répondre à ton message :
       <pubDate>Sat, 24 Aug 2019 00:27:06 +0200</pubDate>
       
       <guid>https://luvideria.github.io/EnterTheExit/about/</guid>
-      <description>I&amp;rsquo;m building a site, and I always encounter the weirdest bugs. Don&amp;rsquo;t ask me.</description>
+      <description>Alright I&amp;rsquo;m pretty sure I&amp;rsquo;m just doing yak-shaving. Anyway it&amp;rsquo;s about time this page gets updated.
+This website is for two persons, that are tightly coupled. John Doe and Killian. John is more the kind of intellectual whereas Killian has things to say about emotions.
+Killian does not sign his posts, but John does. (Killian likes puns more that John)
+Sometimes, John wants to talk about a serious topic but knows he can&amp;rsquo;t really explain it well, or the time spent would not be worth it.</description>
     </item>
     
     <item>
