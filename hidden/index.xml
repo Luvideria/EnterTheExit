@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hidden on Enter The Exit</title>
@@ -7,18 +7,14 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sun, 25 Aug 2019 08:35:35 +0200</lastBuildDate>
-    
-	<atom:link href="https://luvideria.github.io/EnterTheExit/hidden/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 25 Aug 2019 08:35:35 +0200</lastBuildDate><atom:link href="https://luvideria.github.io/EnterTheExit/hidden/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bayes</title>
       <link>https://luvideria.github.io/EnterTheExit/hidden/93376982778390/</link>
       <pubDate>Sat, 14 Sep 2019 23:19:39 +0200</pubDate>
       
       <guid>https://luvideria.github.io/EnterTheExit/hidden/93376982778390/</guid>
-      <description>Explication viteuf de ce que j&amp;rsquo;entendais par &amp;ldquo;bayésien&amp;rdquo;: Disons que le personnage P effectue le calcul de la formule de Bayes1 qui lui donne donc pour résultat 80% pour A et 20% pour B. Il choisira donc A car la probabilité est plus élevé et effectuera éventuellement des actions en accord avec le fait que A est probablement plus vrai -selon ses informations- que B. Cependant le personnage L apporte de nouvelles données.</description>
+      <description>Explication viteuf de ce que j&amp;rsquo;entendais par &amp;ldquo;bayésien&amp;rdquo;: Disons que le personnage P effectue le calcul de la formule de Bayes1 qui lui donne donc pour résultat 80% pour A et 20% pour B. Il choisira donc A car la probabilité est plus élevé et effectuera éventuellement des actions en accord avec le fait que A est probablement plus vrai -selon ses informations- que B.Cependant le personnage L apporte de nouvelles données.</description>
     </item>
     
     <item>

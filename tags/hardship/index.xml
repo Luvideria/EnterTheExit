@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>hardship on Enter The Exit</title>
@@ -7,10 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Wed, 01 Apr 2020 23:21:08 +0200</lastBuildDate>
-    
-	<atom:link href="https://luvideria.github.io/EnterTheExit/tags/hardship/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Mon, 05 Oct 2020 20:21:33 +0200</lastBuildDate><atom:link href="https://luvideria.github.io/EnterTheExit/tags/hardship/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vide</title>
+      <link>https://luvideria.github.io/EnterTheExit/posts/vide/</link>
+      <pubDate>Mon, 05 Oct 2020 20:21:33 +0200</pubDate>
+      
+      <guid>https://luvideria.github.io/EnterTheExit/posts/vide/</guid>
+      <description>Parfois je me sens vide. Vide comme un panier à champignons sans champignons.
+En fait, je sais pas vraiment comment c&amp;rsquo;est d&amp;rsquo;être vide comme un panier à champignons sans champignons.
+Mais je sais ce que c&amp;rsquo;est, ce vide qui me prend. Comme un vers qui n&amp;rsquo;a laissé derrière lui qu&amp;rsquo;une large cavité, là où il y avait mes émotions.
+Et soudain, plus rien. Le chaud, le froid m&amp;rsquo;indiffèrent. Le sucré me laisse de marbre.</description>
+    </item>
     
     <item>
       <title>Finally the end</title>
