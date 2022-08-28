@@ -11,8 +11,10 @@
 <meta itemprop="description" content="Introduction I always had a keen interest into fractals, I played quite a fair bit with Apophysis. That&rsquo;s how I created these images:
 As you can see, there was also transparency. They look very different on a white or on a black background, you can try (for the first two ones)
 Fractals give me a sentiment of infinite complexity, and complexity looks mesmerizing to me. Especially structured complexity, like see how in the Grand-Julian there is usage of symmetry, and also patterns like these circles waving around the red part?">
-<meta itemprop="datePublished" content="2019-08-27T00:20:57+02:00" />
-<meta itemprop="dateModified" content="2019-08-27T00:20:57+02:00" />
+
+
+<meta itemprop="datePublished" content="2019-08-27T00:20:57&#43;02:00" />
+<meta itemprop="dateModified" content="2019-08-27T00:20:57&#43;02:00" />
 <meta itemprop="wordCount" content="854">
 
 
@@ -40,7 +42,7 @@ Fractals give me a sentiment of infinite complexity, and complexity looks mesmer
 	<link rel="shortcut icon" href="/EnterTheExit/favicon.ico">
 
 	<title>Raymarching</title>
-	<link rel="stylesheet" href="https://luvideria.github.io/EnterTheExit/css/style.min.3d09e4f87abd8e025c5e54fd8e3cf97bf0e3be52c57d34038051f99662252aa0.css" integrity="sha256-PQnk+Hq9jgJcXlT9jjz5e/DjvlLFfTQDgFH5lmIlKqA=" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://luvideria.github.io/EnterTheExit/css/style.min.377841dcb5ffe36bc7c8a3aae17e7585e7953dc42204b5506327c5e4e6c67d4e.css" integrity="sha256-N3hB3LX/42vHyKOq4X51heeVPcQiBLVQYyfF5ObGfU4=" crossorigin="anonymous">
 	
 
 </head>
@@ -80,21 +82,35 @@ Fractals give me a sentiment of infinite complexity, and complexity looks mesmer
 				<h1>Raymarching</h1>
 			</header>
 			<div class="content">
-				<h2 id="introduction">Introduction<a href="#introduction" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+				
+
+<h2 id="introduction">Introduction<a href="#introduction" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+
 <p>I always had a keen interest into fractals, I played quite a fair bit with <a href="https://en.wikipedia.org/wiki/Apophysis_(software)">Apophysis</a>. That&rsquo;s how I created these images:</p>
-<p><img src="https://i.ibb.co/DRx1nmv/Grand-Julian.png" alt="Grand-Julian"></p>
-<p><img src="https://i.ibb.co/Fgt4nWm/Piatch.png" alt="Piatch"></p>
-<p><img src="https://i.ibb.co/th66ZGb/triancore.png" alt="triancore"></p>
-<p><img src="https://i.ibb.co/qgdm7br/Triangula.png" alt="Triangula"></p>
+
+<p><img src="https://i.ibb.co/DRx1nmv/Grand-Julian.png" alt="Grand-Julian" /></p>
+
+<p><img src="https://i.ibb.co/Fgt4nWm/Piatch.png" alt="Piatch" /></p>
+
+<p><img src="https://i.ibb.co/th66ZGb/triancore.png" alt="triancore" /></p>
+
+<p><img src="https://i.ibb.co/qgdm7br/Triangula.png" alt="Triangula" /></p>
+
 <p>As you can see, there was also transparency. They look very different on a white or on a black background, you can try (for the first two ones)</p>
+
 <p>Fractals give me a sentiment of infinite complexity, and complexity looks mesmerizing to me. Especially structured complexity, like see how in the Grand-Julian there is usage of symmetry, and also patterns like these circles waving around the red part? Also the symmetry is only an illusion, because looking carefully, the global idea is the same on both side but it&rsquo;s variating, always redefining itself.
 I like that, I just can&rsquo;t help it. It&rsquo;s so abstract, so deep, but at the same time it&rsquo;s just a big fat math equation, tailored by myself to unravel its fierce elegance under the form of an image. <strong>takes a deep breath</strong></p>
+
 <p>So it was really nice, but I had no idea how to render fractals. And I didn&rsquo;t care.</p>
+
 <p>Now the time has come. I&rsquo;ve already written my own (crappy) pathtracer so it cannot be so hard.
 I understand how raytracing works. But I never had the chance to learn about ray marching.</p>
+
 <p>So I fiddled with python and found some ressources on internet (where else ?)
 I wanted to have as few info as possible, and I wanted to solve all the problems myself.</p>
+
 <h2 id="full-program-in-16-lines">Full program in 16 lines<a href="#full-program-in-16-lines" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+
 <p>Guess what?
 It&rsquo;s easy.
 I&rsquo;m not joking:</p>
@@ -116,35 +132,46 @@ I&rsquo;m not joking:</p>
             <span class="n">contrib</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">contrib</span><span class="o">=</span><span class="n">o</span><span class="p">[</span><span class="n">io</span><span class="p">]</span><span class="o">.</span><span class="n">c</span><span class="p">(</span><span class="n">cpos</span><span class="p">,</span><span class="nb">dir</span><span class="p">)</span>
-        <span class="n">img</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">contrib</span>
-</code></pre></div><p>Of course there are the <code>rayMarch()</code> function and the <code>Camera</code>.</p>
+        <span class="n">img</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">contrib</span></code></pre></div>
+<p>Of course there are the <code>rayMarch()</code> function and the <code>Camera</code>.</p>
+
 <h2 id="parallel-with-ray-tracing-and-further-explanations">Parallel with ray tracing and further explanations<a href="#parallel-with-ray-tracing-and-further-explanations" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+
 <p>Basically only two things differ from normal ray tracing:</p>
+
 <ul>
 <li>intersection function does not really exist anymore</li>
 <li>objects are represented by a signed distance function</li>
 <li>your ray is litterally taking small steps to go traverse the scene</li>
 </ul>
+
 <p>The process goes this way:</p>
+
 <ul>
 <li>define objects (like spheres) with SDF corresponding to their parameters (radius, position, color)</li>
 <li>choose an origin $O_r$ for your ray (like, not too far not too close)</li>
 <li>choose a direction $d$ for your ray (straight on a sphere is good)</li>
 </ul>
+
 <p>Here, Rey Marching begins</p>
+
 <ol>
 <li>then compute the $SDF(O_r)$ for all objects in your scene</li>
 <li>take the minimum of it, let&rsquo;s call it <del>Oscar</del> $msdf$</li>
 <li>advance your ray of $msdf$ in the direction d (so it is $newO_r=O_r+msdf$)</li>
 <li>then you repeat using the $newO_r$</li>
-<li>check if the sdf is EPSILON or less, if it&rsquo;s the case then you intersected, report the color value</li>
-</ol>
+<li>check if the sdf is EPSILON or less, if it&rsquo;s the case then you intersected, report the color value
+
 <ul>
 <li>EPSILON is here for some more tolerance (floating point errors or stuff can happen)</li>
-</ul>
+</ul></li>
+</ol>
+
 <p>If you do that, you will loop indefinetely so best thing is to impose a hard limit to the distance the ray can travel
 Another solution would be to compute the bouding box of the scene (if at all, possible) and to measure the distance from the ray to the farthest point of it. But well, I just use 50, it&rsquo;s a good number.</p>
+
 <p>You can also impose a number of maximum steps, and if the ray is misbehaving, (doing too many small steps) hop, background color</p>
+
 <h2 id="ray-marching-algorithm">Ray Marching algorithm<a href="#ray-marching-algorithm" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">EPSILON</span><span class="o">=</span><span class="mf">1e-8</span>
 <span class="n">LIM</span><span class="o">=</span><span class="mi">256</span>
@@ -175,34 +202,42 @@ Another solution would be to compute the bouding box of the scene (if at all, po
             <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">sp</span>
     <span class="k">if</span> <span class="n">i</span><span class="o">&gt;=</span><span class="n">LIM</span><span class="p">:</span>
         <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">sp</span>
-    <span class="k">return</span> <span class="n">index</span><span class="p">,</span><span class="n">sp</span>
-
-</code></pre></div><p>Now, you say, that does not make an image!
+    <span class="k">return</span> <span class="n">index</span><span class="p">,</span><span class="n">sp</span></code></pre></div>
+<p>Now, you say, that does not make an image!
 Of course we need a camera. But that&rsquo;s maths and all, so let me just say that you give the camera a position to be, a position to look at, and boom, you&rsquo;re set.</p>
+
 <p>Now that we have a camera, we call the very convenient function <code>getPixelDir(i,j)</code> that gives us the direction or the ray</p>
+
 <p>Let&rsquo;s say we want a 1080p image, our image is $w=1920$ pixels wide and $h=1080$ pixels high</p>
+
 <ul>
 <li>loop $w$ times:
+
 <ul>
-<li>loop $h$ times:
-<ul>
+<li>loop $h$ times:</li>
 <li>$d=getPixelDir(i,j)$ ($i$,$j$ are the current loop number for $w$ and $h$ loops)</li>
 <li>$p=getCameraPos$</li>
 <li>$color=rayMarch(p,d)$</li>
 <li>$img[i,j]=color$</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
+
 <h2 id="results">Results<a href="#results" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+
 <p>boom done. Do that and, like me, you obtain THIS:</p>
-<p><img src="https://i.ibb.co/nkQskTc/first.png" alt="img"></p>
+
+<p><img src="https://i.ibb.co/nkQskTc/first.png" alt="img" /></p>
+
 <p>Incredible huh?</p>
+
 <p>Yes, it&rsquo;s shit, but what did you expect? there is no lighting, no bounce of the light. All this is for a real renderer.</p>
+
 <p>okay, let me add the cos term so that it looks like actual balls at least:</p>
-<p><img src="https://i.ibb.co/PWBG7XZ/3balls.png" alt="img"></p>
+
+<p><img src="https://i.ibb.co/PWBG7XZ/3balls.png" alt="img" /></p>
+
 <p>I just wanted to see how it works but now, I need to get on the fractal train.</p>
+
 <p>And I have to say, python sucks! It&rsquo;s so damn slow!</p>
 
 			</div>
@@ -218,13 +253,16 @@ Of course we need a camera. But that&rsquo;s maths and all, so let me just say t
 		<aside id="toc">
 			<div class="toc-title">Table of Contents</div>
 			<nav id="TableOfContents">
-  <ul>
-    <li><a href="#introduction">Introduction</a></li>
-    <li><a href="#full-program-in-16-lines">Full program in 16 lines</a></li>
-    <li><a href="#parallel-with-ray-tracing-and-further-explanations">Parallel with ray tracing and further explanations</a></li>
-    <li><a href="#ray-marching-algorithm">Ray Marching algorithm</a></li>
-    <li><a href="#results">Results</a></li>
-  </ul>
+<ul>
+<li>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#full-program-in-16-lines">Full program in 16 lines</a></li>
+<li><a href="#parallel-with-ray-tracing-and-further-explanations">Parallel with ray tracing and further explanations</a></li>
+<li><a href="#ray-marching-algorithm">Ray Marching algorithm</a></li>
+<li><a href="#results">Results</a></li>
+</ul></li>
+</ul>
 </nav>
 		</aside>
 		<div class="post-nav thin">
@@ -241,7 +279,7 @@ Of course we need a camera. But that&rsquo;s maths and all, so let me just say t
 
 
 	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
-		<p>&copy; 2020 <a href="https://luvideria.github.io/EnterTheExit">John Doe</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
+		<p>&copy; 2022 <a href="https://luvideria.github.io/EnterTheExit">John Doe</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
 		<p>
 			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://luvideria.github.io/EnterTheExit/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
 		</p>

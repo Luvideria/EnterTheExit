@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>rendering on Enter The Exit</title>
@@ -7,7 +7,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Tue, 27 Aug 2019 00:20:57 +0200</lastBuildDate><atom:link href="https://luvideria.github.io/EnterTheExit/tags/rendering/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 27 Aug 2019 00:20:57 +0200</lastBuildDate>
+    
+	<atom:link href="https://luvideria.github.io/EnterTheExit/tags/rendering/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Raymarching</title>
       <link>https://luvideria.github.io/EnterTheExit/posts/raymarching/</link>
